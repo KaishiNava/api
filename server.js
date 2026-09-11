@@ -4,7 +4,7 @@ const rateLimit = require('express-rate-limit')
 const am = require('./am')
 
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 8080
 
 const WEB_API_KEY = process.env.WEB_API_KEY || 'dev-key-ganti-di-production'
 
@@ -229,7 +229,7 @@ app.use((err, req, res, next) => {
   }))
 })
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log(`✅ ${am.BRAND.brand} API running on port ${PORT}`)
   console.log(`👨‍💻 Developer: ${am.BRAND.developer}`)
 })
